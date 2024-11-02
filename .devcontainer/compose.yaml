@@ -1,0 +1,18 @@
+name: rust-example
+services:
+  rust:
+    build: ./services/rust
+    tty: true
+    volumes:
+      - ../:/workspace:cached
+  postgres:
+    build: ./services/postgres
+    environment:
+      POSTGRES_PASSWORD: rust
+      POSTGRES_USER: rust
+      POSTGRES_DB: rust
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8 --locale=C"
+    restart: always
+    shm_size: 128mb
+    volumes:
+      - ./services/postgres/initdb.d:/docker-entrypoint-initdb.d

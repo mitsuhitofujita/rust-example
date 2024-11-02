@@ -1,0 +1,30 @@
+{
+	"name": "rust-example",
+	"dockerComposeFile": [
+		"compose.yaml"
+	],
+	"service": "rust",
+	"remoteUser": "vscode",
+	"remoteEnv": {
+		"DB_HOST": "postgres",
+		"DB_PORT": "5432",
+		"DB_DATABASE": "rust_example"
+	},
+	"workspaceFolder": "/workspace",
+	"customizations": {
+		"vscode": {
+			"settings": {
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "/bin/bash"
+                    }
+                },
+                "terminal.integrated.defaultProfile.linux": "bash"
+            },
+			"extensions": [
+				"editorconfig.editorconfig",
+				"redhat.vscode-yaml"
+			]
+		}
+	}
+}
