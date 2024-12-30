@@ -23,7 +23,8 @@
             },
 			"extensions": [
 				"editorconfig.editorconfig",
-				"redhat.vscode-yaml"
+				"redhat.vscode-yaml",
+				"rust-lang.rust-analyzer"
 			]
 		}
 	}
